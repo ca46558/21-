@@ -1,0 +1,142 @@
+body { 
+            background: linear-gradient(135deg, #0f5132, #198754);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.8) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        .card-custom {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-5px);
+        }
+
+        .game-area {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .playing-card {
+            width: 80px;
+            height: 112px;
+            background: white;
+            border: 2px solid #000;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .playing-card.red {
+            color: #dc3545;
+        }
+
+        .playing-card.black {
+            color: #000;
+        }
+
+        .card-back {
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+            color: white;
+        }
+
+        .btn-game {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-game:hover {
+            transform: scale(1.05);
+        }
+
+        .score-display {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .origin-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .origin-timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #198754;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.25rem;
+            width: 12px;
+            height: 12px;
+            background: #198754;
+            border-radius: 50%;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .rule-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .rule-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .rule-card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ffc107;
+        }
