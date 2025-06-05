@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-TW">
 
 <head>
@@ -6,26 +7,37 @@
     <title>21點</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./21.css">
+    <link rel="stylesheet" href="21點.css">
 
 </head>
 
 <body>
 
-    <!-- 歡迎首頁遮罩 -->
     <div id="welcomeCover" style="
-    position:fixed; z-index:9999; inset:0; background:linear-gradient(135deg, #14532d, #198754);
+    position:fixed; z-index:9999; inset:0; 
     display:flex; flex-direction:column; justify-content:center; align-items:center;
+    background:
+        linear-gradient(rgba(0,0,0,0.65),rgba(25,135,84,0.7)), 
+        url('./1丟籌碼.jpg') center center/cover no-repeat;
 ">
-        <h1 class="display-1 fw-bold text-white mb-4" style="text-shadow:2px 2px 10px #000;">
-            <i class="fas fa-heart text-danger me-3"></i>21點
-        </h1>
-        <p class="lead text-white mb-5 fs-3" style="text-shadow:2px 2px 10px #000;">
-            經典的紙牌遊戲，挑戰運氣與策略的完美結合
-        </p>
-        <button id="enterBtn" class="btn btn-warning btn-lg px-5 py-3 fs-4 shadow-lg" style="border-radius: 32px;">
-            開始
-        </button>
+        <div style="
+        background: rgba(255,255,255,0.16);
+        backdrop-filter: blur(5px);
+        border-radius: 32px;
+        padding: 48px 40px 40px 40px;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        display:flex; flex-direction:column; align-items:center;
+    ">
+            <h1 class="display-1 fw-bold text-white mb-4" style="text-shadow:2px 2px 10px #000;">
+                <i class="fas fa-heart text-danger me-3"></i>21點
+            </h1>
+            <p class="lead text-white mb-5 fs-3" style="text-shadow:2px 2px 10px #000;">
+                經典的紙牌遊戲，挑戰運氣與策略的完美結合
+            </p>
+            <button id="enterBtn" class="btn btn-warning btn-lg px-5 py-3 fs-4 shadow-lg" style="border-radius: 32px;">
+                開始
+            </button>
+        </div>
     </div>
 
 
@@ -56,12 +68,12 @@
         </nav>
 
         <!-- 遊戲起源區域 -->
-        <section id="origin" class="py-5 mt-5">
-            <div class="container">
-                <h2 class="section-title text-center display-4 fw-bold">
+        <section id="origin" class="py-5 my-5 section-bg-origin">
+            <div class="container text-center text-white">
+                <h2 class="section-title display-4 fw-bold">
                     <i class="fas fa-history me-3"></i>遊戲起源
                 </h2>
-                <div class="row" style="height: 1000px" ;>
+                <div class="row" ;>
                     <div class="col-lg-8 mx-auto">
                         <div class="card-custom p-4">
                             <div class="origin-timeline">
@@ -90,7 +102,7 @@
         </section>
 
         <!-- 遊戲規則區域 -->
-        <section id="rules" class="py-5">
+        <section id="origin" class="py-5 mt-5">
             <div class="container">
                 <h2 class="section-title text-center display-4 fw-bold">
                     <i class="fas fa-book me-3"></i>遊戲規則
@@ -149,7 +161,7 @@
         </section>
 
         <!-- 遊戲區域 -->
-        <section id="game" class="py-5">
+        <section id="game" class="py-5 mt-5">
             <div class="container">
                 <h2 class="section-title text-center display-4 fw-bold">
                     <i class="fas fa-gamepad me-3"></i>開始遊戲
@@ -226,7 +238,6 @@
                 </div>
             </div>
         </section>
-
         <!-- 頁腳 -->
         <footer class="py-4 text-center text-white">
             <div class="container">
@@ -235,8 +246,11 @@
         </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="./21.js "></script>
-
+    <script src="./21點.js "></script>
+    <script>document.getElementById('enterBtn').addEventListener('click', function () {
+            document.getElementById('welcomeCover').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        });</script>
 </body>
 
 </html>
