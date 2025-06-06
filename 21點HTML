@@ -273,7 +273,7 @@
             </div>
         </section>
         <!-- 頁腳 -->
-        <footer class="py-4 text-center text-white">
+        <footer class="py-4 text-center text-white section-bg-foot">
             <div class="container">
                 <p>&copy;小賭怡情，大賭郭台銘</p>
             </div>
