@@ -145,3 +145,7 @@ body {
 .section-bg-origin li {
   color: #333;
 }
+
+/* .section-bg-foot {
+    background: #e1e2e4;
+} */
