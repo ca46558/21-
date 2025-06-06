@@ -7,8 +7,38 @@
     <title>21點</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="21點.css">
+    <link rel="stylesheet" href="21.css">
 
+    <style>
+        .section-bg-origin {
+            background:
+                linear-gradient(rgba(30, 41, 59, 0.68), rgba(16, 185, 129, 0.6)),
+                url('./2.jpg') center center/cover no-repeat;
+        }
+
+        .section-bg-rules {
+            background:
+                linear-gradient(rgba(39, 55, 85, 0.65), rgba(16, 185, 129, 0.5)),
+                url('./card3.jpg') center center/cover no-repeat;
+        }
+
+        .section-bg-game {
+            background:
+                linear-gradient(rgba(12, 32, 65, 0.7), rgba(25, 135, 84, 0.5)),
+                url('./green4.jpg') center center/cover no-repeat;
+        }
+
+        .section-bg-origin,
+        .section-bg-rules,
+        .section-bg-game {
+            border-radius: 32px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        }
+
+        /* .section-bg-origin p {
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+        } */
+    </style>
 </head>
 
 <body>
@@ -18,7 +48,7 @@
     display:flex; flex-direction:column; justify-content:center; align-items:center;
     background:
         linear-gradient(rgba(0,0,0,0.65),rgba(25,135,84,0.7)), 
-        url('./1丟籌碼.jpg') center center/cover no-repeat;
+        url('./1.jpg') center center/cover no-repeat;
 ">
         <div style="
         background: rgba(255,255,255,0.16);
@@ -102,7 +132,7 @@
         </section>
 
         <!-- 遊戲規則區域 -->
-        <section id="origin" class="py-5 mt-5">
+        <section id="rules" class="py-5 mt-5 section-bg-rules">
             <div class="container">
                 <h2 class="section-title text-center display-4 fw-bold">
                     <i class="fas fa-book me-3"></i>遊戲規則
@@ -161,7 +191,7 @@
         </section>
 
         <!-- 遊戲區域 -->
-        <section id="game" class="py-5 mt-5">
+        <section id="game" class="py-5 mt-5 section-bg-game">
             <div class="container">
                 <h2 class="section-title text-center display-4 fw-bold">
                     <i class="fas fa-gamepad me-3"></i>開始遊戲
@@ -172,10 +202,14 @@
                         <!-- 籌碼與下注區塊 -->
                         <div class="d-flex flex-wrap justify-content-center align-items-center mb-3">
                             <div class="me-3 text-white fw-bold">
-                                <i class="fas fa-coins me-1"></i>籌碼: <span id="playerChips">1000</span>
+                                <i class="fas fa-coins me-1"></i>籌碼: <span id="playerChips">3000</span>
+                                <button id="addChipsBtn" class="btn btn-outline-success btn-game ms-3" style="
+                                    display:none" ;>
+                                    <i class="fas fa-plus-circle me-2"></i>借貸
+                                </button>
                             </div>
                             <div class="me-3">
-                                <input type="number" id="betAmount" class="form-control" value="100" min="10" step="10"
+                                <input type="number" id="betAmount" class="form-control" value="" min="10" step="10"
                                     style="width: 110px; display: inline-block;">
                             </div>
                             <button id="betBtn" class="btn btn-info btn-game">下注</button>
@@ -246,7 +280,7 @@
         </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="./21點.js "></script>
+    <script src="./21.js "></script>
     <script>document.getElementById('enterBtn').addEventListener('click', function () {
             document.getElementById('welcomeCover').style.display = 'none';
             document.getElementById('mainContent').style.display = 'block';
