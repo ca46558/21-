@@ -1,11 +1,3 @@
-
-document.getElementById('enterBtn').addEventListener('click', function() {
-    document.getElementById('welcomeCover').style.display = 'none';
-    document.getElementById('mainContent').style.display = 'block';
-    // 自動滑動到主內容（可選）
-    // window.scrollTo({top:0});
-});
-
 // -------- 狀態管理 --------
 let deck = [];
 let playerHand = [];
@@ -14,7 +6,7 @@ let gameActive = false;
 let dealerHidden = true;
 
 // 籌碼與統計
-let playerChips = 1000;
+let playerChips = 3000;
 let currentBet = 0;
 let winCount = 0, loseCount = 0, drawCount = 0;
 let betPlaced = false;
@@ -239,16 +231,24 @@ function endGame() {
     document.getElementById('betAmount').disabled = false;
     document.getElementById('newGameBtn').disabled = true;
 
+
     // 籌碼歸零提示
     if (playerChips <= 0) {
-        document.getElementById('gameStatus').innerHTML +=
-            '<p class="text-danger fw-bold mt-2">你已經破產，請重新整理頁面開始新遊戲！</p>';
-        document.getElementById('betBtn').disabled = true;
-        document.getElementById('betAmount').disabled = true;
-        document.getElementById('hitBtn').disabled = true;
-        document.getElementById('standBtn').disabled = true;
-    }
+    document.getElementById('gameStatus').innerHTML +=
+        '<p class="text-danger fw-bold mt-2">你已經破產，歡迎諮詢公司貸款服務</p>';
+    document.getElementById('betBtn').disabled = true;
+    document.getElementById('betAmount').disabled = true;
+    document.getElementById('hitBtn').disabled = true;
+    document.getElementById('standBtn').disabled = true;
+    // 顯示補充籌碼按鈕
+    document.getElementById('addChipsBtn').style.display = 'inline-block';
+} else {
+    // 沒破產時補充鈕隱藏
+    document.getElementById('addChipsBtn').style.display = 'none';
 }
+document.getElementById('betAmount').value = "";
+}
+
 
 // -------- 按鈕與滾動 --------
 function updateButtons() {
@@ -279,3 +279,17 @@ document.getElementById('standBtn').addEventListener('click', stand);
 document.getElementById('newGameBtn').disabled = true;
 updateButtons();
 updateStats();
+
+ document.getElementById('addChipsBtn').addEventListener('click', function () {
+    const addAmount = 1000;
+    playerChips += addAmount;
+    updateStats();
+    alert('已撥款，歡迎您繼續遊玩 +' + addAmount + '！');
+    // 補充後自動隱藏補充鈕
+    document.getElementById('addChipsBtn').style.display = 'none';
+    // 重新啟用下注輸入/按鈕
+    document.getElementById('betBtn').disabled = false;
+    document.getElementById('betAmount').disabled = false;
+});
+document.getElementById('betAmount').value = "";
+
