@@ -292,4 +292,3 @@ updateStats();
     document.getElementById('betAmount').disabled = false;
 });
 document.getElementById('betAmount').value = "";
-
